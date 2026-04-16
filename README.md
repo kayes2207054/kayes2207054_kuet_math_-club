@@ -1,3 +1,5 @@
+# kayes2207054_kuet_math_-club
+
 KUET Math Club — Single Page Portfolio (HTML + CSS only)
 
 Files:
@@ -9,7 +11,5 @@ How to preview:
 
 Notes:
 - No JavaScript is used. Mobile nav uses a CSS checkbox toggle.
-- Images are placeholders (picsum/placehold.co). Replace with club photos in the `images/` folder if desired.
+- Replace placeholder images with club photos in the `images/` folder if desired.
 - Colors and fonts can be adjusted in `style.css` (root variables).
-
-Want me to: add real images into an `images/` folder, or generate a printable PDF/one-page handout? Reply with which option.
