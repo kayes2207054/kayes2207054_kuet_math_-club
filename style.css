@@ -1,0 +1,131 @@
+/* KUET Math Club — style.css
+   Clean, responsive CSS using Flexbox & Grid.
+   No JavaScript — mobile nav via checkbox pattern. */
+
+:root{
+  --primary:#0B3D91; /* KUET deep blue */
+  --accent:#F39C12;  /* warm amber */
+  --bg:#F4F7FB;      /* page background */
+  --text:#0B1B2B;    /* main text */
+  --muted:#5B6B7A;   /* subdued text */
+  --container:1100px;
+  --radius:12px;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}
+body{line-height:1.5;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;}
+img{max-width:100%;display:block;height:auto}
+.container{max-width:var(--container);margin:0 auto;padding:0 1.25rem}
+
+/* Smooth scrolling */
+html{scroll-behavior:smooth}
+
+/* Skip link */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:var(--primary);color:#fff;border-radius:6px}
+
+/* Header / Navbar */
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,255,255,0.7));backdrop-filter:saturate(120%) blur(6px);box-shadow:0 2px 8px rgba(11,61,145,.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0}
+.logo{font-weight:700;color:var(--primary);text-decoration:none;font-size:1.1rem}
+
+/* Nav links */
+.nav-links{list-style:none;display:flex;gap:1.15rem;align-items:center}
+.nav-links a{color:var(--text);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:500}
+.nav-links a:hover{background:rgba(11,61,145,0.06);color:var(--primary)}
+
+/* Mobile nav toggle (checkbox) */
+#nav-toggle{display:none}
+.nav-toggle-label{display:none;cursor:pointer}
+.nav-toggle-label span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:2px}
+
+/* Hero */
+.hero{padding:3.25rem 0;background:linear-gradient(135deg,#EAF2FF 0%, #F4F7FB 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(1.6rem,3.5vw,2.6rem);color:var(--primary);margin-bottom:.6rem}
+.hero p{color:var(--muted);margin-bottom:1.1rem}
+.hero-card{background:linear-gradient(135deg, rgba(11,61,145,0.05), rgba(243,156,18,0.03));padding:1rem;border-radius:var(--radius);box-shadow:0 10px 30px rgba(11,61,145,0.06)}
+
+/* Buttons */
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600;transition:transform .18s ease, box-shadow .18s ease}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,61,145,0.12)}
+.btn.ghost{background:transparent;color:var(--primary);border:1px solid rgba(11,61,145,0.08)}
+.btn.ghost:hover{background:rgba(11,61,145,0.04)}
+
+/* Sections */
+.section-title{font-size:1.35rem;color:var(--primary);margin-bottom:1rem}
+.about{padding:2.25rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start}
+.mission h3{margin-top:.6rem;color:var(--primary)}
+
+/* Activities */
+.activities{padding:2.25rem 0}
+.activities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.card{background:#fff;padding:1.1rem;border-radius:12px;box-shadow:0 8px 20px rgba(11,61,145,0.04);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,61,145,0.08)}
+.card-icon{font-size:1.8rem;margin-bottom:.6rem}
+
+/* Team */
+.team{padding:2.25rem 0}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.team-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(11,61,145,0.04);transition:transform .18s}
+.team-card img{width:100%;height:220px;object-fit:cover}
+.team-info{padding:.8rem}
+.muted{color:var(--muted)}
+
+/* Gallery */
+.gallery{padding:2.25rem 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery-item{position:relative;overflow:hidden;border-radius:10px}
+.gallery-item img{transition:transform .28s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:.6rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));color:#fff;font-size:.9rem}
+
+/* Contact */
+.contact{padding:2.25rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem}
+.contact-form{background:#fff;padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(11,61,145,0.04)}
+.contact-form label{display:block;margin-bottom:.75rem}
+.contact-form input, .contact-form textarea{width:100%;padding:.6rem;border:1px solid #e6eef9;border-radius:8px;font-size:0.95rem}
+.label-text{display:block;margin-bottom:.35rem;color:var(--muted);font-weight:600}
+.form-actions{display:flex;gap:.6rem;margin-top:.6rem}
+.contact-info{padding:1rem}
+.socials{display:flex;gap:.5rem;margin-top:.6rem}
+.social{display:inline-block;padding:.4rem .6rem;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none}
+
+/* Footer */
+.site-footer{padding:1.25rem 0;background:#fff;margin-top:2rem;border-top:1px solid rgba(11,61,145,0.04)}
+.footer-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between}
+.footer-title{font-weight:700;color:var(--primary)}
+.footer-socials a{margin-left:.6rem;color:var(--muted);text-decoration:none}
+
+/* Responsive rules */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:760px){
+  .header-inner{gap:.6rem}
+  .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(11,61,145,0.02),#fff);flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;padding:4rem 1rem;transform:translateY(-100%);transition:transform .25s ease}
+  #nav-toggle:checked + .nav-toggle-label + .nav .nav-links{transform:translateY(0)}
+  .nav-toggle-label{display:block}
+  .nav-links{display:flex}
+}
+
+/* Focus states & accessibility */
+:focus{outline:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+
+/* Utility spacing */
+.p-1{padding:1rem}
+.muted small{color:var(--muted)}
