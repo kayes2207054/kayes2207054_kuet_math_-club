@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KUET Math Club</title>
-  <!-- Google Font: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>KUET Math Club | Portfolio</title>
+  <meta name="description" content="KUET Math Club portfolio: achievements, programs, events, team, and opportunities for students.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="KUET Math Club — Khulna University of Engineering & Technology. Workshops, competitions, seminars, and math community for curious students.">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#home">KUET Math Club</a>
+      <a class="logo" href="#home">
+        <span class="logo-dot" aria-hidden="true"></span>
+        KUET Math Club
+      </a>
 
       <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation">
       <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
@@ -23,11 +25,14 @@
         <span></span>
       </label>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#activities">Activities</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#journey">Journey</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -37,165 +42,278 @@
   </header>
 
   <main id="main">
-    <section id="home" class="hero">
+    <section id="home" class="hero section-pad">
       <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Welcome to KUET Math Club</h1>
-          <p>We explore, learn, and celebrate mathematics through workshops, olympiads, seminars, and collaborative projects. Join us to grow your problem-solving skills and connect with fellow math enthusiasts.</p>
-          <div class="hero-cta">
-            <a class="btn primary" href="#contact">Join Us</a>
-            <a class="btn ghost" href="#activities">Our Activities</a>
+        <div class="hero-copy">
+          <p class="eyebrow">KUET • Math • Leadership</p>
+          <h1>A modern student math community focused on impact.</h1>
+          <p class="lead">KUET Math Club develops confident problem solvers through olympiad training, workshops, seminars, and peer mentoring. We turn mathematical thinking into campus-wide growth.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Join the Club</a>
+            <a class="btn btn-ghost" href="#programs">View Programs</a>
           </div>
+
+          <ul class="proof-list" aria-label="Quick highlights">
+            <li>Weekly practice sessions</li>
+            <li>Inter-university preparation</li>
+            <li>Open mentoring for all KUET students</li>
+          </ul>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="hero-card">
-            <img src="images/kuet-event.jpg" alt="KUET Math Club event photo">
+
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img src="images/kuet-event.svg" alt="KUET Math Club members during an event">
+          </figure>
+
+          <div class="floating-card">
+            <p class="floating-label">Current Focus</p>
+            <p class="floating-title">National Math Olympiad Preparation</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="profile" class="section-pad profile-section">
+      <div class="container profile-grid">
+        <div class="profile-photo panel">
+          <img src="images/kuet-event.svg" alt="KUET Math Club profile poster">
+        </div>
+        <div class="profile-copy">
+          <p class="eyebrow">Featured profile</p>
+          <h2>Profile image for the club</h2>
+          <p class="lead">The profile image now uses the club photo already available in <strong>images/kuet-event.jpg</strong>. If you want, I can replace it with your uploaded poster once it is saved in the images folder.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Join the Club</a>
+            <a class="btn btn-ghost" href="#gallery">See Gallery</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="impact-strip">
+      <div class="container impact-grid" aria-label="Club statistics">
+        <article>
+          <p class="stat">40+</p>
+          <p class="stat-label">Active members</p>
+        </article>
+        <article>
+          <p class="stat">18</p>
+          <p class="stat-label">Workshops conducted</p>
+        </article>
+        <article>
+          <p class="stat">12</p>
+          <p class="stat-label">Seminars hosted</p>
+        </article>
+        <article>
+          <p class="stat">8</p>
+          <p class="stat-label">Competition awards</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section-pad">
       <div class="container">
-        <h2 class="section-title">About Us</h2>
+        <div class="section-head">
+          <p class="eyebrow">Who we are</p>
+          <h2>About KUET Math Club</h2>
+        </div>
+
         <div class="about-grid">
-          <p>The KUET Math Club (Khulna University of Engineering & Technology) is a student-run organization fostering mathematical curiosity, critical thinking and collaboration. We host events for all levels — from friendly problem sessions to competitive training.</p>
-          <div class="mission">
+          <article class="panel">
+            <h3>Our Identity</h3>
+            <p>We are a student-led organization at Khulna University of Engineering &amp; Technology, building an academic culture where mathematics is practical, competitive, and collaborative.</p>
+          </article>
+          <article class="panel">
             <h3>Mission</h3>
-            <p>Promote mathematics literacy, provide mentoring, and encourage participation in national and international mathematical activities.</p>
+            <p>Strengthen mathematical literacy, mentor junior students, and prepare participants for olympiads, technical interviews, and advanced studies.</p>
+          </article>
+          <article class="panel">
             <h3>Vision</h3>
-            <p>Build an inclusive community where KUET students grow mathematically and apply problem-solving to real-world challenges.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="activities" class="activities">
-      <div class="container">
-        <h2 class="section-title">Activities</h2>
-        <div class="activities-grid">
-          <article class="card">
-            <div class="card-icon">📐</div>
-            <h4>Math Olympiad</h4>
-            <p>Training sessions and mock tests to prepare for national contests.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🧮</div>
-            <h4>Workshops</h4>
-            <p>Hands-on workshops on topics like combinatorics, number theory, and problem-solving techniques.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🎤</div>
-            <h4>Seminars</h4>
-            <p>Invited talks from professors and alumni about advanced topics and career pathways.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">🏆</div>
-            <h4>Competitions</h4>
-            <p>Inter-departmental and inter-university competitions to showcase talent and teamwork.</p>
+            <p>Create an inclusive, high-performing campus ecosystem where mathematical thinking drives innovation across departments.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="team" class="team">
+    <section id="programs" class="section-pad programs-bg">
       <div class="container">
-        <h2 class="section-title">Our Team</h2>
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Programs & Activities</h2>
+        </div>
+
+        <div class="program-grid">
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">📐</p>
+            <h3>Olympiad Track</h3>
+            <p>Structured sheets, guided solutions, and timed mock rounds for competition-readiness.</p>
+          </article>
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">🧮</p>
+            <h3>Concept Workshops</h3>
+            <p>Topic-based workshops in algebra, combinatorics, number theory, and geometry.</p>
+          </article>
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">🎤</p>
+            <h3>Seminar Series</h3>
+            <p>Faculty and alumni sessions on higher studies, research exposure, and career pathways.</p>
+          </article>
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">🤝</p>
+            <h3>Peer Mentoring</h3>
+            <p>Open support sessions where seniors mentor juniors on strategy and fundamentals.</p>
+          </article>
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">🏆</p>
+            <h3>Campus Competitions</h3>
+            <p>Inter-department and team challenges to practice under pressure and build confidence.</p>
+          </article>
+          <article class="card">
+            <p class="card-icon" aria-hidden="true">📚</p>
+            <h3>Resource Library</h3>
+            <p>Curated reading lists, archived questions, and discussion-based solution materials.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section-pad">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Milestones</p>
+          <h2>Recent Journey</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date">2024</p>
+            <h3>Club Relaunch & Orientation</h3>
+            <p>Started regular onboarding and beginner-focused problem-solving sessions.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2025</p>
+            <h3>KUET Campus Math Olympiad</h3>
+            <p>Organized multi-round olympiad with mentoring and full post-contest review.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date">2026</p>
+            <h3>Inter-University Preparation Cell</h3>
+            <p>Built a dedicated support pipeline for external competitions and team selection.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="team" class="section-pad team-bg">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Leadership</p>
+          <h2>Core Team</h2>
+        </div>
+
         <div class="team-grid">
           <article class="team-card">
-            <img src="https://picsum.photos/seed/member1/400/400" alt="Member portrait: A. Rahman">
-            <div class="team-info">
-              <h4>A. Rahman</h4>
-              <p class="muted">President</p>
-            </div>
+            <div class="avatar" aria-hidden="true">AR</div>
+            <h3>A. Rahman</h3>
+            <p>President</p>
           </article>
-
           <article class="team-card">
-            <img src="https://picsum.photos/seed/member2/400/400" alt="Member portrait: S. Khan">
-            <div class="team-info">
-              <h4>S. Khan</h4>
-              <p class="muted">Vice President</p>
-            </div>
+            <div class="avatar" aria-hidden="true">SK</div>
+            <h3>S. Khan</h3>
+            <p>Vice President</p>
           </article>
-
           <article class="team-card">
-            <img src="https://picsum.photos/seed/member3/400/400" alt="Member portrait: M. Hasan">
-            <div class="team-info">
-              <h4>M. Hasan</h4>
-              <p class="muted">Secretary</p>
-            </div>
+            <div class="avatar" aria-hidden="true">MH</div>
+            <h3>M. Hasan</h3>
+            <p>General Secretary</p>
           </article>
-
           <article class="team-card">
-            <img src="https://picsum.photos/seed/member4/400/400" alt="Member portrait: R. Sultana">
-            <div class="team-info">
-              <h4>R. Sultana</h4>
-              <p class="muted">Event Coordinator</p>
-            </div>
+            <div class="avatar" aria-hidden="true">RS</div>
+            <h3>R. Sultana</h3>
+            <p>Event Coordinator</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="section-pad">
       <div class="container">
-        <h2 class="section-title">Gallery</h2>
+        <div class="section-head">
+          <p class="eyebrow">Club life</p>
+          <h2>Gallery</h2>
+        </div>
+
         <div class="gallery-grid">
-          <figure class="gallery-item"><img src="images/kuet-event.jpg" alt="KUET Math Club group photo"><figcaption>KUET Math Club Event</figcaption></figure>
-          <figure class="gallery-item"><img src="https://picsum.photos/seed/g2/800/600" alt="Gallery image 2"><figcaption>Math Olympiad</figcaption></figure>
-          <figure class="gallery-item"><img src="https://picsum.photos/seed/g3/800/600" alt="Gallery image 3"><figcaption>Seminar Talk</figcaption></figure>
-          <figure class="gallery-item"><img src="https://picsum.photos/seed/g4/800/600" alt="Gallery image 4"><figcaption>Competition</figcaption></figure>
+          <figure class="gallery-item wide">
+            <img src="images/kuet-event.svg" alt="KUET Math Club orientation event">
+            <figcaption>Orientation & Team Introduction</figcaption>
+          </figure>
+          <figure class="gallery-item tall">
+            <img src="images/kuet-event.svg" alt="Students in a problem solving session">
+            <figcaption>Weekly Problem Circle</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/kuet-event.svg" alt="Seminar arranged by KUET Math Club">
+            <figcaption>Faculty Seminar Session</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/kuet-event.svg" alt="Campus math olympiad participants">
+            <figcaption>Campus Math Olympiad</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-grid">
+    <section id="contact" class="section-pad contact-bg">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Get involved</p>
+            <h2>Join KUET Math Club</h2>
+          </div>
+
           <form class="contact-form" action="#" method="post" novalidate>
             <label>
-              <span class="label-text">Name</span>
+              <span>Name</span>
               <input type="text" name="name" placeholder="Your name" required>
             </label>
             <label>
-              <span class="label-text">Email</span>
+              <span>Email</span>
               <input type="email" name="email" placeholder="you@example.com" required>
             </label>
             <label>
-              <span class="label-text">Message</span>
-              <textarea name="message" rows="6" placeholder="Write a short message..." required></textarea>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Tell us why you want to join" required></textarea>
             </label>
             <div class="form-actions">
-              <button class="btn primary" type="submit">Send Message</button>
-              <button class="btn ghost" type="reset">Reset</button>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <button class="btn btn-ghost" type="reset">Reset</button>
             </div>
+            <p class="note">This is a static demo form. Add backend integration to receive messages.</p>
           </form>
-
-          <aside class="contact-info">
-            <h3>Get in touch</h3>
-            <p>Email: <a href="mailto:kuetmathclub@example.com">kuetmathclub@example.com</a></p>
-            <p>Follow us on social media for updates on events and opportunities.</p>
-            <div class="socials">
-              <a href="#" aria-label="Facebook" class="social">FB</a>
-              <a href="#" aria-label="LinkedIn" class="social">IN</a>
-            </div>
-          </aside>
         </div>
+
+        <aside class="contact-info panel">
+          <h3>Contact Details</h3>
+          <p>Email: <a href="mailto:kuetmathclub@example.com">kuetmathclub@example.com</a></p>
+          <p>Weekly Meeting: Thursday, 4:00 PM</p>
+          <p>Location: KUET Campus (Room announced each week)</p>
+
+          <div class="socials">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-title">KUET Math Club</p>
-      <div class="footer-socials">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-      </div>
-      <p class="copyright">&copy; <span id="year">2026</span> KUET Math Club. All rights reserved.</p>
+      <p><strong>KUET Math Club</strong> — Portfolio 2026</p>
+      <p>Crafted for academic excellence and community impact.</p>
     </div>
   </footer>
-
 </body>
 </html>

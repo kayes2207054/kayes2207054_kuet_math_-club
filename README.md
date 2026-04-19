@@ -1,15 +1,32 @@
-# kayes2207054_kuet_math_-club
+# KUET Math Club Portfolio
 
-KUET Math Club — Single Page Portfolio (HTML + CSS only)
+AoPS-inspired, proof-first single-page portfolio for KUET Math Club (HTML + CSS only).
 
-Files:
-- index.html — main page (semantic HTML)
-- style.css — design and responsive styles
+## Sections
+- Hero (club identity + call-to-action)
+- About
+- Achievements & Impact
+- Programs
+- Leadership Team
+- Gallery
+- Contact
 
-How to preview:
-1. Open `index.html` in your browser (double-click or use "Open File")
+## Files
+- index.html — semantic page structure and content
+- style.css — responsive styles, layout, and theme tokens
+- images/kuet-event.jpg — local image used in hero/gallery
+- push_to_github.ps1 — helper script for GitHub push workflow
 
-Notes:
-- No JavaScript is used. Mobile nav uses a CSS checkbox toggle.
-- Replace placeholder images with club photos in the `images/` folder if desired.
-- Colors and fonts can be adjusted in `style.css` (root variables).
+## Preview
+1. Open index.html in a browser.
+
+## Customization
+- Update club statistics in the Achievements section.
+- Replace team placeholder initials with real names/photos.
+- Set real social/profile links in contact and footer.
+- Adjust theme colors using variables in style.css under `:root`.
+
+## Notes
+- No JavaScript is used.
+- Mobile navigation is handled using a CSS checkbox toggle.
+- Contact form is currently static (demo only).
