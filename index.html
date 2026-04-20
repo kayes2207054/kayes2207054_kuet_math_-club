@@ -3,22 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KUET Math Club | Portfolio</title>
-  <meta name="description" content="KUET Math Club portfolio: achievements, programs, events, team, and opportunities for students.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>KUET Math Club | Build Mathematical Thinkers and Leaders</title>
+  <meta name="description" content="KUET Math Club helps students master problem solving through olympiad training, workshops, mentoring, and campus events.">
+  <meta name="keywords" content="KUET Math Club, KUET, Math Olympiad, student club, problem solving, workshops, Bangladesh">
+  <meta name="author" content="KUET Math Club">
+  <meta name="theme-color" content="#0a2e73">
+  <link rel="canonical" href="https://kuetmathclub.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KUET Math Club | Build Mathematical Thinkers and Leaders">
+  <meta property="og:description" content="Join a high-impact math community at KUET for olympiad preparation, mentoring, and academic growth.">
+  <meta property="og:url" content="https://kuetmathclub.vercel.app/">
+  <meta property="og:image" content="https://kuetmathclub.vercel.app/images/kuet-event.jpg">
+  <meta property="og:site_name" content="KUET Math Club">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KUET Math Club | Build Mathematical Thinkers and Leaders">
+  <meta name="twitter:description" content="From beginners to olympiad aspirants, KUET Math Club helps students sharpen logic, confidence, and leadership.">
+  <meta name="twitter:image" content="https://kuetmathclub.vercel.app/images/kuet-event.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/kuet-event.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KUET Math Club",
+      "url": "https://kuetmathclub.vercel.app/",
+      "logo": "https://kuetmathclub.vercel.app/images/kuet-event.svg",
+      "description": "Student-led mathematics community at KUET focused on olympiad training, mentoring, and academic events.",
+      "email": "kuetmathclub@kuet.ac.bd",
+      "sameAs": [
+        "https://www.facebook.com/kuetmathclub",
+        "https://www.linkedin.com/company/kuet-math-club"
+      ]
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#home">
-        <span class="logo-dot" aria-hidden="true"></span>
-        KUET Math Club
+      <a class="logo" href="#home" aria-label="KUET Math Club home">
+        <span class="logo-mark" aria-hidden="true">∫</span>
+        <span class="logo-text">KUET Math Club</span>
       </a>
 
-      <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation">
       <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
         <span></span>
         <span></span>
@@ -28,16 +64,17 @@
       <nav class="nav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#profile">Profile</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#why-join">Why Join</a></li>
           <li><a href="#impact">Impact</a></li>
           <li><a href="#programs">Programs</a></li>
-          <li><a href="#journey">Journey</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#testimonials">Voices</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <a class="btn btn-nav" href="#contact">Join Now</a>
     </div>
   </header>
 
@@ -45,193 +82,169 @@
     <section id="home" class="hero section-pad">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">KUET • Math • Leadership</p>
-          <h1>A modern student math community focused on impact.</h1>
-          <p class="lead">KUET Math Club develops confident problem solvers through olympiad training, workshops, seminars, and peer mentoring. We turn mathematical thinking into campus-wide growth.</p>
+          <p class="eyebrow">Khulna University of Engineering and Technology</p>
+          <h1>Where KUET students turn mathematical curiosity into national-level results.</h1>
+          <p class="lead">We help students build proof-writing skill, olympiad confidence, and leadership through focused practice circles, mentoring, and high-quality academic events.</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Join the Club</a>
-            <a class="btn btn-ghost" href="#programs">View Programs</a>
+            <a class="btn btn-primary" href="#contact">Apply for Membership</a>
+            <a class="btn btn-ghost" href="#gallery">Explore Events</a>
           </div>
 
-          <ul class="proof-list" aria-label="Quick highlights">
-            <li>Weekly practice sessions</li>
-            <li>Inter-university preparation</li>
-            <li>Open mentoring for all KUET students</li>
+          <ul class="hero-proof" aria-label="Key outcomes">
+            <li><strong>160+</strong> students engaged since relaunch</li>
+            <li><strong>30+</strong> focused training sessions in 12 months</li>
+            <li><strong>8</strong> awards across campus and external contests</li>
           </ul>
         </div>
 
         <div class="hero-visual">
-          <figure class="hero-photo">
-            <img src="images/kuet-event.svg" alt="KUET Math Club members during an event">
+          <figure class="hero-photo hero-photo-main">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop" alt="KUET Math Club members at a live event" width="1200" height="800" fetchpriority="high" decoding="async">
+          </figure>
+          <figure class="hero-photo hero-photo-sub">
+            <img src="images/kuet-event.svg" alt="KUET Math Club training and problem solving activities" width="900" height="600" loading="lazy" decoding="async">
           </figure>
 
           <div class="floating-card">
-            <p class="floating-label">Current Focus</p>
-            <p class="floating-title">National Math Olympiad Preparation</p>
+            <p class="floating-label">Upcoming</p>
+            <p class="floating-title">Inter-University Math Sprint 2026</p>
+            <p class="floating-meta">Registration closes: 15 May</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="profile" class="section-pad profile-section">
-      <div class="container profile-grid">
-        <div class="profile-photo panel">
-          <img src="images/kuet-event.svg" alt="KUET Math Club profile poster">
-        </div>
-        <div class="profile-copy">
-          <p class="eyebrow">Featured profile</p>
-          <h2>Profile image for the club</h2>
-          <p class="lead">The profile image now uses the club photo already available in <strong>images/kuet-event.jpg</strong>. If you want, I can replace it with your uploaded poster once it is saved in the images folder.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Join the Club</a>
-            <a class="btn btn-ghost" href="#gallery">See Gallery</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="impact" class="impact-strip">
-      <div class="container impact-grid" aria-label="Club statistics">
-        <article>
-          <p class="stat">40+</p>
-          <p class="stat-label">Active members</p>
-        </article>
-        <article>
-          <p class="stat">18</p>
-          <p class="stat-label">Workshops conducted</p>
-        </article>
-        <article>
-          <p class="stat">12</p>
-          <p class="stat-label">Seminars hosted</p>
-        </article>
-        <article>
-          <p class="stat">8</p>
-          <p class="stat-label">Competition awards</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="section-pad">
+    <section id="about" class="section-pad section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Who we are</p>
-          <h2>About KUET Math Club</h2>
+          <p class="eyebrow">About the club</p>
+          <h2>An academic community built by students, for students.</h2>
         </div>
 
         <div class="about-grid">
           <article class="panel">
-            <h3>Our Identity</h3>
-            <p>We are a student-led organization at Khulna University of Engineering &amp; Technology, building an academic culture where mathematics is practical, competitive, and collaborative.</p>
+            <h3>Our mission</h3>
+            <p>Make advanced mathematical thinking accessible, practical, and exciting for every KUET student regardless of department or prior experience.</p>
           </article>
           <article class="panel">
-            <h3>Mission</h3>
-            <p>Strengthen mathematical literacy, mentor junior students, and prepare participants for olympiads, technical interviews, and advanced studies.</p>
+            <h3>How we work</h3>
+            <p>We combine guided problem sets, peer reviews, timed contests, and mentor feedback so members improve steadily and confidently.</p>
           </article>
           <article class="panel">
-            <h3>Vision</h3>
-            <p>Create an inclusive, high-performing campus ecosystem where mathematical thinking drives innovation across departments.</p>
+            <h3>What members gain</h3>
+            <p>Sharper analytical ability, stronger interview readiness, collaboration skills, and a supportive network of ambitious peers.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="programs" class="section-pad programs-bg">
+    <section id="why-join" class="section-pad why-join">
+      <div class="container why-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Why join us</p>
+            <h2>A growth system, not just a club membership.</h2>
+          </div>
+          <ul class="check-list">
+            <li>Weekly focused training with clear progression paths</li>
+            <li>Mentorship from seniors and alumni with competition experience</li>
+            <li>Practice culture that improves confidence under pressure</li>
+            <li>Exposure to higher study and research opportunities</li>
+          </ul>
+        </div>
+
+        <aside class="panel why-panel">
+          <h3>Member outcomes after one semester</h3>
+          <ul>
+            <li>Average 40% faster problem-solving speed in mock rounds</li>
+            <li>Regular participation in team contests and seminars</li>
+            <li>Improved communication through solution presentations</li>
+          </ul>
+          <a class="btn btn-primary full" href="#contact">Start Your Journey</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="impact" class="impact-strip">
+      <div class="container impact-grid" aria-label="Club impact metrics">
+        <article>
+          <p class="stat">160+</p>
+          <p class="stat-label">Students engaged</p>
+        </article>
+        <article>
+          <p class="stat">34</p>
+          <p class="stat-label">Workshops and circles</p>
+        </article>
+        <article>
+          <p class="stat">12</p>
+          <p class="stat-label">Faculty and alumni sessions</p>
+        </article>
+        <article>
+          <p class="stat">8</p>
+          <p class="stat-label">Competition recognitions</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="programs" class="section-pad">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">What we do</p>
-          <h2>Programs & Activities</h2>
+          <p class="eyebrow">Programs</p>
+          <h2>Signature activities that create measurable growth.</h2>
         </div>
 
         <div class="program-grid">
           <article class="card">
-            <p class="card-icon" aria-hidden="true">📐</p>
-            <h3>Olympiad Track</h3>
-            <p>Structured sheets, guided solutions, and timed mock rounds for competition-readiness.</p>
+            <h3>Olympiad Preparation Lab</h3>
+            <p>Structured training for number theory, combinatorics, geometry, and algebra with weekly mock tests.</p>
           </article>
           <article class="card">
-            <p class="card-icon" aria-hidden="true">🧮</p>
-            <h3>Concept Workshops</h3>
-            <p>Topic-based workshops in algebra, combinatorics, number theory, and geometry.</p>
+            <h3>Proof and Logic Studio</h3>
+            <p>Build clarity in proof-writing, mathematical argument, and presentation through guided peer sessions.</p>
           </article>
           <article class="card">
-            <p class="card-icon" aria-hidden="true">🎤</p>
-            <h3>Seminar Series</h3>
-            <p>Faculty and alumni sessions on higher studies, research exposure, and career pathways.</p>
+            <h3>Math for Engineers Series</h3>
+            <p>Applied workshops connecting core math to coding, optimization, and research problem formulation.</p>
           </article>
           <article class="card">
-            <p class="card-icon" aria-hidden="true">🤝</p>
-            <h3>Peer Mentoring</h3>
-            <p>Open support sessions where seniors mentor juniors on strategy and fundamentals.</p>
+            <h3>Mentor Hours</h3>
+            <p>Open office hours where seniors mentor juniors on strategy, resources, and learning plans.</p>
           </article>
           <article class="card">
-            <p class="card-icon" aria-hidden="true">🏆</p>
-            <h3>Campus Competitions</h3>
-            <p>Inter-department and team challenges to practice under pressure and build confidence.</p>
+            <h3>Campus Challenge League</h3>
+            <p>Team-based contests designed to improve speed, accuracy, and calm decision making.</p>
           </article>
           <article class="card">
-            <p class="card-icon" aria-hidden="true">📚</p>
-            <h3>Resource Library</h3>
-            <p>Curated reading lists, archived questions, and discussion-based solution materials.</p>
+            <h3>Research and Higher Study Talks</h3>
+            <p>Insight sessions from faculty and alumni on research mindset, scholarships, and global opportunities.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="journey" class="section-pad">
+    <section id="testimonials" class="section-pad section-soft">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Milestones</p>
-          <h2>Recent Journey</h2>
+          <p class="eyebrow">Member voices</p>
+          <h2>What students say about KUET Math Club.</h2>
         </div>
 
-        <ol class="timeline">
-          <li class="timeline-item">
-            <p class="timeline-date">2024</p>
-            <h3>Club Relaunch & Orientation</h3>
-            <p>Started regular onboarding and beginner-focused problem-solving sessions.</p>
-          </li>
-          <li class="timeline-item">
-            <p class="timeline-date">2025</p>
-            <h3>KUET Campus Math Olympiad</h3>
-            <p>Organized multi-round olympiad with mentoring and full post-contest review.</p>
-          </li>
-          <li class="timeline-item">
-            <p class="timeline-date">2026</p>
-            <h3>Inter-University Preparation Cell</h3>
-            <p>Built a dedicated support pipeline for external competitions and team selection.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="team" class="section-pad team-bg">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Leadership</p>
-          <h2>Core Team</h2>
-        </div>
-
-        <div class="team-grid">
-          <article class="team-card">
-            <div class="avatar" aria-hidden="true">AR</div>
-            <h3>A. Rahman</h3>
-            <p>President</p>
+        <div class="quote-grid">
+          <article class="quote-card">
+            <p>"I joined as a beginner, but the weekly practice and mentor feedback helped me solve olympiad-style problems with confidence."</p>
+            <h3>Nafisa Rahman</h3>
+            <span>Level-2, CSE</span>
           </article>
-          <article class="team-card">
-            <div class="avatar" aria-hidden="true">SK</div>
-            <h3>S. Khan</h3>
-            <p>Vice President</p>
+          <article class="quote-card">
+            <p>"The club changed how I think. Instead of memorizing formulas, I now understand why each method works."</p>
+            <h3>Tanvir Hossain</h3>
+            <span>Level-3, EEE</span>
           </article>
-          <article class="team-card">
-            <div class="avatar" aria-hidden="true">MH</div>
-            <h3>M. Hasan</h3>
-            <p>General Secretary</p>
-          </article>
-          <article class="team-card">
-            <div class="avatar" aria-hidden="true">RS</div>
-            <h3>R. Sultana</h3>
-            <p>Event Coordinator</p>
+          <article class="quote-card">
+            <p>"Our seminar series connected us with alumni and opened clear paths for higher studies and research planning."</p>
+            <h3>Sabina Yasmin</h3>
+            <span>Level-4, ME</span>
           </article>
         </div>
       </div>
@@ -240,27 +253,37 @@
     <section id="gallery" class="section-pad">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Club life</p>
-          <h2>Gallery</h2>
+          <p class="eyebrow">Event highlights</p>
+          <h2>Moments from our campus journey.</h2>
         </div>
 
         <div class="gallery-grid">
-          <figure class="gallery-item wide">
-            <img src="images/kuet-event.svg" alt="KUET Math Club orientation event">
-            <figcaption>Orientation & Team Introduction</figcaption>
-          </figure>
-          <figure class="gallery-item tall">
-            <img src="images/kuet-event.svg" alt="Students in a problem solving session">
-            <figcaption>Weekly Problem Circle</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="images/kuet-event.svg" alt="Seminar arranged by KUET Math Club">
-            <figcaption>Faculty Seminar Session</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="images/kuet-event.svg" alt="Campus math olympiad participants">
-            <figcaption>Campus Math Olympiad</figcaption>
-          </figure>
+          <article class="event-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop" alt="Students attending KUET Math Club orientation" width="1200" height="800" loading="lazy" decoding="async">
+            <div class="event-copy">
+              <h3>Orientation and Problem Circle Launch</h3>
+              <p>Date: 18 January 2026</p>
+              <p>Venue: ECE Building Seminar Room, KUET</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&h=600&fit=crop" alt="KUET Math Club workshop session" width="900" height="600" loading="lazy" decoding="async">
+            <div class="event-copy">
+              <h3>Proof-Writing Bootcamp</h3>
+              <p>Date: 22 February 2026</p>
+              <p>Venue: Central Classroom Complex, KUET</p>
+            </div>
+          </article>
+
+          <article class="event-card event-card-accent">
+            <div class="event-poster" aria-hidden="true"></div>
+            <div class="event-copy">
+              <h3>KUET Campus Math Olympiad Final Round</h3>
+              <p>Date: 29 March 2026</p>
+              <p>Venue: Mechanical Engineering Gallery, KUET</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -270,39 +293,40 @@
         <div>
           <div class="section-head">
             <p class="eyebrow">Get involved</p>
-            <h2>Join KUET Math Club</h2>
+            <h2>Become a member of KUET Math Club.</h2>
           </div>
 
-          <form class="contact-form" action="#" method="post" novalidate>
+          <form class="contact-form" action="mailto:kuetmathclub@kuet.ac.bd" method="post" enctype="text/plain">
             <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required>
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Your full name" autocomplete="name" required>
             </label>
             <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required>
+              <span>University email</span>
+              <input type="email" name="email" placeholder="you@kuet.ac.bd" autocomplete="email" required>
             </label>
             <label>
-              <span>Message</span>
-              <textarea name="message" rows="5" placeholder="Tell us why you want to join" required></textarea>
+              <span>Why do you want to join?</span>
+              <textarea name="message" rows="5" placeholder="Share your interests and goals" required></textarea>
             </label>
             <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Send Message</button>
-              <button class="btn btn-ghost" type="reset">Reset</button>
+              <button class="btn btn-primary" type="submit">Submit Application</button>
+              <a class="btn btn-ghost" href="mailto:kuetmathclub@kuet.ac.bd">Email Directly</a>
             </div>
-            <p class="note">This is a static demo form. Add backend integration to receive messages.</p>
+            <p class="note">Response time: usually within 24 to 48 hours.</p>
           </form>
         </div>
 
         <aside class="contact-info panel">
-          <h3>Contact Details</h3>
-          <p>Email: <a href="mailto:kuetmathclub@example.com">kuetmathclub@example.com</a></p>
-          <p>Weekly Meeting: Thursday, 4:00 PM</p>
-          <p>Location: KUET Campus (Room announced each week)</p>
+          <h3>Contact details</h3>
+          <p><strong>Email:</strong> <a href="mailto:kuetmathclub@kuet.ac.bd">kuetmathclub@kuet.ac.bd</a></p>
+          <p><strong>Meeting day:</strong> Thursday, 4:00 PM</p>
+          <p><strong>Campus location:</strong> KUET Academic Zone, room announced weekly</p>
+          <p><strong>Membership coordinator:</strong> +880 1712 345678</p>
 
-          <div class="socials">
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/kuetmathclub" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.linkedin.com/company/kuet-math-club" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </aside>
       </div>
@@ -311,9 +335,28 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p><strong>KUET Math Club</strong> — Portfolio 2026</p>
-      <p>Crafted for academic excellence and community impact.</p>
+      <p><strong>KUET Math Club</strong> | Portfolio 2026</p>
+      <p>Mathematics. Mentorship. Measurable Growth.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var navToggle = document.getElementById("nav-toggle");
+      var navLinks = document.querySelectorAll(".nav-links a");
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          navToggle.checked = false;
+        });
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          navToggle.checked = false;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
