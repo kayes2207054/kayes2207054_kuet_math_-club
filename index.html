@@ -54,20 +54,20 @@
         <span class="logo-text">KUET Math Club</span>
       </a>
 
-      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation">
-      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <button class="nav-toggle-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
         <span></span>
         <span></span>
-      </label>
+      </button>
 
-      <nav class="nav" aria-label="Primary">
+      <nav id="primary-navigation" class="nav" aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#why-join">Why Join</a></li>
           <li><a href="#impact">Impact</a></li>
           <li><a href="#programs">Programs</a></li>
+          <li><a href="#leadership">Leadership</a></li>
           <li><a href="#testimonials">Voices</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -92,9 +92,9 @@
           </div>
 
           <ul class="hero-proof" aria-label="Key outcomes">
-            <li><strong>160+</strong> students engaged since relaunch</li>
-            <li><strong>30+</strong> focused training sessions in 12 months</li>
-            <li><strong>8</strong> awards across campus and external contests</li>
+            <li><strong>Growing</strong> membership across KUET departments</li>
+            <li><strong>Weekly</strong> problem-solving and proof sessions</li>
+            <li><strong>Regular</strong> faculty and alumni guidance</li>
           </ul>
         </div>
 
@@ -169,20 +169,20 @@
     <section id="impact" class="impact-strip">
       <div class="container impact-grid" aria-label="Club impact metrics">
         <article>
-          <p class="stat">160+</p>
-          <p class="stat-label">Students engaged</p>
+          <p class="stat">Growing</p>
+          <p class="stat-label">Active membership</p>
         </article>
         <article>
-          <p class="stat">34</p>
-          <p class="stat-label">Workshops and circles</p>
+          <p class="stat">Weekly</p>
+          <p class="stat-label">Workshops and study circles</p>
         </article>
         <article>
-          <p class="stat">12</p>
+          <p class="stat">Regular</p>
           <p class="stat-label">Faculty and alumni sessions</p>
         </article>
         <article>
-          <p class="stat">8</p>
-          <p class="stat-label">Competition recognitions</p>
+          <p class="stat">Campus</p>
+          <p class="stat-label">Competition participation</p>
         </article>
       </div>
     </section>
@@ -218,6 +218,57 @@
           <article class="card">
             <h3>Research and Higher Study Talks</h3>
             <p>Insight sessions from faculty and alumni on research mindset, scholarships, and global opportunities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership" class="section-pad section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Leadership team</p>
+          <h2>The student leaders guiding KUET Math Club forward.</h2>
+        </div>
+
+        <div class="leadership-grid">
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&h=900&fit=crop" alt="Portrait of the club president" width="900" height="900" loading="lazy" decoding="async">
+            <div class="team-card-body">
+              <p class="team-role">President</p>
+              <h3>Md. Arif Hossain</h3>
+              <p class="team-meta">Department: Civil Engineering</p>
+              <p class="team-meta">Batch: 21</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&h=900&fit=crop" alt="Portrait of the general secretary" width="900" height="900" loading="lazy" decoding="async">
+            <div class="team-card-body">
+              <p class="team-role">General Secretary</p>
+              <h3>Faria Rahman</h3>
+              <p class="team-meta">Department: CSE</p>
+              <p class="team-meta">Batch: 22</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&h=900&fit=crop" alt="Portrait of the programs coordinator" width="900" height="900" loading="lazy" decoding="async">
+            <div class="team-card-body">
+              <p class="team-role">Programs Coordinator</p>
+              <h3>Tanvir Hasan</h3>
+              <p class="team-meta">Department: EEE</p>
+              <p class="team-meta">Batch: 23</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&h=900&fit=crop" alt="Portrait of the communications lead" width="900" height="900" loading="lazy" decoding="async">
+            <div class="team-card-body">
+              <p class="team-role">Communications Lead</p>
+              <h3>Sabina Yasmin</h3>
+              <p class="team-meta">Department: ME</p>
+              <p class="team-meta">Batch: 23</p>
+            </div>
           </article>
         </div>
       </div>
@@ -296,23 +347,27 @@
             <h2>Become a member of KUET Math Club.</h2>
           </div>
 
-          <form class="contact-form" action="mailto:kuetmathclub@kuet.ac.bd" method="post" enctype="text/plain">
+          <form class="contact-form" action="https://formspree.io/f/your-form-id" method="post">
             <label>
               <span>Full name</span>
               <input type="text" name="name" placeholder="Your full name" autocomplete="name" required>
+              <small class="field-error" data-error-for="name"></small>
             </label>
             <label>
               <span>University email</span>
               <input type="email" name="email" placeholder="you@kuet.ac.bd" autocomplete="email" required>
+              <small class="field-error" data-error-for="email"></small>
             </label>
             <label>
               <span>Why do you want to join?</span>
               <textarea name="message" rows="5" placeholder="Share your interests and goals" required></textarea>
+              <small class="field-error" data-error-for="message"></small>
             </label>
             <div class="form-actions">
               <button class="btn btn-primary" type="submit">Submit Application</button>
               <a class="btn btn-ghost" href="mailto:kuetmathclub@kuet.ac.bd">Email Directly</a>
             </div>
+            <p class="form-status" aria-live="polite" role="status"></p>
             <p class="note">Response time: usually within 24 to 48 hours.</p>
           </form>
         </div>
@@ -335,25 +390,138 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p><strong>KUET Math Club</strong> | Portfolio 2026</p>
-      <p>Mathematics. Mentorship. Measurable Growth.</p>
+      <div>
+        <p><strong>KUET Math Club</strong></p>
+        <p>Khulna University of Engineering &amp; Technology, Khulna, Bangladesh</p>
+      </div>
+
+      <p>© 2026 KUET Math Club. All rights reserved.</p>
+
+      <div class="socials footer-socials" aria-label="Social links">
+        <a href="https://www.facebook.com/kuetmathclub" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.linkedin.com/company/kuet-math-club" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
     </div>
   </footer>
 
   <script>
     (function () {
-      var navToggle = document.getElementById("nav-toggle");
+      var navToggle = document.querySelector(".nav-toggle-btn");
       var navLinks = document.querySelectorAll(".nav-links a");
+      var form = document.querySelector(".contact-form");
+      var status = document.querySelector(".form-status");
+      var submitButton = form ? form.querySelector('button[type="submit"]') : null;
+
+      function setMenu(open) {
+        document.body.classList.toggle("nav-open", open);
+        navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener("click", function () {
+          setMenu(!document.body.classList.contains("nav-open"));
+        });
+      }
 
       navLinks.forEach(function (link) {
         link.addEventListener("click", function () {
-          navToggle.checked = false;
+          setMenu(false);
         });
       });
 
+      function setStatus(message, type) {
+        if (!status) {
+          return;
+        }
+
+        status.textContent = message;
+        status.className = "form-status" + (type ? " is-" + type : "");
+      }
+
+      function setFieldError(name, message) {
+        var error = document.querySelector('[data-error-for="' + name + '"]');
+        if (error) {
+          error.textContent = message || "";
+        }
+      }
+
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          var name = form.elements.name;
+          var email = form.elements.email;
+          var message = form.elements.message;
+          var hasError = false;
+
+          setStatus("", "");
+          setFieldError("name", "");
+          setFieldError("email", "");
+          setFieldError("message", "");
+
+          if (!name.value.trim()) {
+            setFieldError("name", "Please enter your full name.");
+            hasError = true;
+          }
+
+          if (!email.value.trim()) {
+            setFieldError("email", "Please enter your email address.");
+            hasError = true;
+          } else if (!email.checkValidity()) {
+            setFieldError("email", "Please enter a valid email address.");
+            hasError = true;
+          }
+
+          if (!message.value.trim()) {
+            setFieldError("message", "Please write a short message.");
+            hasError = true;
+          }
+
+          if (hasError) {
+            event.preventDefault();
+            setStatus("Please fix the highlighted fields.", "error");
+            return;
+          }
+
+          event.preventDefault();
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+          }
+
+          fetch(form.action, {
+            method: "POST",
+            headers: {
+              Accept: "application/json"
+            },
+            body: new FormData(form)
+          }).then(function (response) {
+            if (response.ok) {
+              form.reset();
+              setStatus("Thanks. Your application was sent successfully.", "success");
+              return;
+            }
+
+            throw new Error("Form submission failed");
+          }).catch(function () {
+            setStatus("Something went wrong. Please try again or email us directly.", "error");
+          }).finally(function () {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = "Submit Application";
+            }
+          });
+        });
+      }
+
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
-          navToggle.checked = false;
+          setMenu(false);
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 780) {
+          setMenu(false);
         }
       });
     })();
