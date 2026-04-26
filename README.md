@@ -1,32 +1,73 @@
-# KUET Math Club Portfolio
+# KUET Math Club - Dynamic PHP Portfolio
 
-AoPS-inspired, proof-first single-page portfolio for KUET Math Club (HTML + CSS only).
+Professional no-framework PHP portfolio for KUET Math Club.
 
-## Sections
-- Hero (club identity + call-to-action)
-- About
-- Achievements & Impact
-- Programs
-- Leadership Team
-- Gallery
-- Contact
+## Project Structure
 
-## Files
-- index.html — semantic page structure and content
-- style.css — responsive styles, layout, and theme tokens
-- images/kuet-event.jpg — local image used in hero/gallery
-- push_to_github.ps1 — helper script for GitHub push workflow
+- includes/
+	- header.php
+	- footer.php
+- config/
+	- config.php
+	- schema.sql
+- classes/
+	- Utilities.php
+	- Database.php
+	- Person.php
+	- Member.php
+	- Admin.php
+	- Event.php
+- pages/
+	- home.php
+	- about.php
+	- events.php
+	- members.php
+	- contact.php
+	- admin.php
+- index.php
+- style.css
 
-## Preview
-1. Open index.html in a browser.
+## Covered PHP Concepts
 
-## Customization
-- Update club statistics in the Achievements section.
-- Replace team placeholder initials with real names/photos.
-- Set real social/profile links in contact and footer.
-- Adjust theme colors using variables in style.css under `:root`.
+- Variables and constants
+- Indexed and associative arrays
+- Foreach loops and if-else conditionals
+- Include/require modular layout
+- Form handling with POST
+- Server-side validation and error/success messaging
+- OOP: constructor, properties, methods, inheritance
+- Interface, abstract class, trait
+- Static methods for utility
 
-## Notes
-- No JavaScript is used.
-- Mobile navigation is handled using a CSS checkbox toggle.
-- Contact form is currently static (demo only).
+## Bonus Features
+
+- Simple admin panel (session-based)
+- Optional MySQL support through PDO
+
+## Run Locally
+
+1. Make sure PHP 8+ is installed.
+2. From project root:
+
+	 php -S localhost:8000
+
+3. Open:
+
+	 http://localhost:8000/index.php?page=home
+
+## MySQL Setup (Optional)
+
+1. Import config/schema.sql into MySQL.
+2. Open config/config.php.
+3. Set:
+
+	 - USE_DB to true
+	 - DB_HOST, DB_NAME, DB_USER, DB_PASS
+
+Then forms/admin writes data into MySQL tables.
+
+## Admin Panel
+
+- URL: index.php?page=admin
+- Default password: kuet_admin_2026
+- Change ADMIN_PASSWORD in config/config.php before deployment.
