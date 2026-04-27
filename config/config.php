@@ -3,18 +3,38 @@ declare(strict_types=1);
 
 date_default_timezone_set('Asia/Dhaka');
 
+// Lightweight .env loader for local development without extra dependencies.
+if (file_exists(__DIR__ . '/../.env')) {
+    $envLines = file(__DIR__ . '/../.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($envLines as $envLine) {
+        $trimmed = trim($envLine);
+        if ($trimmed === '' || str_starts_with($trimmed, '#') || !str_contains($trimmed, '=')) {
+            continue;
+        }
+
+        [$name, $value] = explode('=', $trimmed, 2);
+        $name = trim($name);
+        $value = trim($value, " \t\n\r\0\x0B\"'");
+
+        if ($name !== '' && getenv($name) === false) {
+            putenv($name . '=' . $value);
+            $_ENV[$name] = $value;
+        }
+    }
+}
+
 define('SITE_NAME', 'KUET Math Club');
 define('SITE_EMAIL', 'kuetmathclub@kuet.ac.bd');
 define('SITE_PHONE', '+8801712345678');
 define('SITE_ADDRESS', 'Khulna University of Engineering and Technology, Khulna, Bangladesh');
-define('ADMIN_PASSWORD', 'kuet_admin_2026');
 
-// Optional DB settings (bonus). Keep USE_DB false if MySQL is not configured.
-define('USE_DB', false);
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'kuet_math_club');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Secrets and DB config are loaded from environment variables only.
+$adminPassword = getenv('ADMIN_PASSWORD') ?: '';
+$dbHost = getenv('DB_HOST') ?: '';
+$dbName = getenv('DB_NAME') ?: '';
+$dbUser = getenv('DB_USER') ?: '';
+$dbPass = getenv('DB_PASS') ?: '';
+define('USE_DB', filter_var(getenv('USE_DB') ?: 'false', FILTER_VALIDATE_BOOLEAN));
 
 $navItems = [
     'home' => 'Home',

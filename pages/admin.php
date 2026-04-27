@@ -10,11 +10,13 @@ $adminSuccess = '';
 
 if (($_POST['admin_action'] ?? '') === 'login') {
     $password = Utilities::sanitize($_POST['password'] ?? '');
-    if ($password === ADMIN_PASSWORD) {
+    if ($adminPassword !== '' && hash_equals($adminPassword, $password)) {
         $_SESSION['is_admin_logged_in'] = true;
         $adminSuccess = 'Admin login successful.';
     } else {
-        $adminError = 'Invalid admin password.';
+        $adminError = $adminPassword === ''
+            ? 'Admin password is not configured in environment variables.'
+            : 'Invalid admin password.';
     }
 }
 

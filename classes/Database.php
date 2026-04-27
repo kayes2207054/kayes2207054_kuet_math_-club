@@ -15,10 +15,19 @@ final class Database
             return self::$conn;
         }
 
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4';
+        $dbHost = getenv('DB_HOST') ?: '';
+        $dbName = getenv('DB_NAME') ?: '';
+        $dbUser = getenv('DB_USER') ?: '';
+        $dbPass = getenv('DB_PASS') ?: '';
+
+        if ($dbHost === '' || $dbName === '' || $dbUser === '') {
+            return null;
+        }
+
+        $dsn = 'mysql:host=' . $dbHost . ';dbname=' . $dbName . ';charset=utf8mb4';
 
         try {
-            self::$conn = new PDO($dsn, DB_USER, DB_PASS, [
+            self::$conn = new PDO($dsn, $dbUser, $dbPass, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);

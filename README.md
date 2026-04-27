@@ -58,10 +58,10 @@ Professional no-framework PHP portfolio for KUET Math Club.
 ## MySQL Setup (Optional)
 
 1. Import config/schema.sql into MySQL.
-2. Open config/config.php.
-3. Set:
+2. Create a local .env file from .env.example.
+3. Set values in .env:
 
-	 - USE_DB to true
+	 - USE_DB=true
 	 - DB_HOST, DB_NAME, DB_USER, DB_PASS
 
 Then forms/admin writes data into MySQL tables.
@@ -69,5 +69,4 @@ Then forms/admin writes data into MySQL tables.
 ## Admin Panel
 
 - URL: index.php?page=admin
-- Default password: kuet_admin_2026
-- Change ADMIN_PASSWORD in config/config.php before deployment.
+- Set ADMIN_PASSWORD in your local .env file.
