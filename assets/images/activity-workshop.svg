@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">KUET Math Club workshop illustration</title>
+  <desc id="desc">Students working on math problems during a workshop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#edf3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="36" fill="url(#bg)"/>
+  <rect x="76" y="108" width="648" height="344" rx="28" fill="#ffffff" stroke="#d8e2f5" stroke-width="4"/>
+  <path d="M108 186h588" stroke="#d8e2f5" stroke-width="4"/>
+  <circle cx="162" cy="150" r="14" fill="#ff9f1c"/>
+  <circle cx="206" cy="150" r="14" fill="#ffd08a"/>
+  <circle cx="250" cy="150" r="14" fill="#1345a3"/>
+  <g fill="#1345a3" opacity="0.12">
+    <path d="M136 250h154v18H136z"/>
+    <path d="M136 288h220v18H136z"/>
+    <path d="M136 326h182v18H136z"/>
+  </g>
+  <g transform="translate(468 220)">
+    <circle cx="0" cy="0" r="54" fill="#1345a3" opacity="0.14"/>
+    <circle cx="0" cy="0" r="30" fill="#1345a3"/>
+    <path d="M-56 72h112" stroke="#ff9f1c" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(528 252)">
+    <rect x="0" y="0" width="120" height="100" rx="20" fill="#edf3ff" stroke="#d8e2f5" stroke-width="4"/>
+    <path d="M20 24h80M20 50h58M20 76h68" stroke="#1345a3" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(130 422)">
+    <circle cx="60" cy="36" r="36" fill="#ffd08a"/>
+    <rect x="28" y="70" width="64" height="88" rx="20" fill="#1345a3"/>
+    <circle cx="224" cy="24" r="32" fill="#ff9f1c" opacity="0.92"/>
+    <rect x="188" y="56" width="72" height="102" rx="20" fill="#071d4f"/>
+    <circle cx="396" cy="34" r="34" fill="#1345a3" opacity="0.85"/>
+    <rect x="360" y="68" width="72" height="92" rx="20" fill="#0a2e73"/>
+  </g>
+</svg>

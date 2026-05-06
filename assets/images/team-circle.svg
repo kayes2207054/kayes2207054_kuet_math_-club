@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">KUET Math Club team illustration</title>
+  <desc id="desc">A small team of students gathered around a shared math table.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="36" fill="url(#bg2)"/>
+  <circle cx="400" cy="258" r="92" fill="#1345a3" opacity="0.12"/>
+  <circle cx="400" cy="258" r="56" fill="#ff9f1c" opacity="0.22"/>
+  <rect x="214" y="314" width="372" height="118" rx="28" fill="#ffffff" stroke="#d8e2f5" stroke-width="4"/>
+  <path d="M246 354h308M246 390h222" stroke="#d8e2f5" stroke-width="4"/>
+  <g transform="translate(150 210)">
+    <circle cx="0" cy="0" r="30" fill="#ffd08a"/>
+    <rect x="-28" y="34" width="56" height="98" rx="20" fill="#0a2e73"/>
+  </g>
+  <g transform="translate(282 182)">
+    <circle cx="0" cy="0" r="34" fill="#ff9f1c"/>
+    <rect x="-30" y="38" width="60" height="118" rx="20" fill="#1345a3"/>
+  </g>
+  <g transform="translate(520 186)">
+    <circle cx="0" cy="0" r="34" fill="#1345a3"/>
+    <rect x="-30" y="38" width="60" height="118" rx="20" fill="#071d4f"/>
+  </g>
+  <g transform="translate(652 220)">
+    <circle cx="0" cy="0" r="30" fill="#ffd08a"/>
+    <rect x="-28" y="34" width="56" height="98" rx="20" fill="#0a2e73" opacity="0.92"/>
+  </g>
+  <path d="M314 324c22-44 92-62 166-28 48 22 78 62 84 104" fill="none" stroke="#ff9f1c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M316 466c32-18 78-26 130-26 58 0 110 10 150 30" fill="none" stroke="#1345a3" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+</svg>
