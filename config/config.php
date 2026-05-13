@@ -81,21 +81,21 @@ $defaultEvents = [
         'date' => '2026-01-18',
         'venue' => 'ECE Building Seminar Room, KUET',
         'type' => 'Workshop',
-        'description' => 'Kickoff event for new members with guided problem-solving demos.'
+        'description' => 'Kickoff session for new members with guided problem-solving practice and peer introductions.'
     ],
     [
         'title' => 'Proof-Writing Bootcamp',
         'date' => '2026-02-22',
         'venue' => 'Central Classroom Complex, KUET',
         'type' => 'Training',
-        'description' => 'Focused training on proof techniques, logical structure, and presentation.'
+        'description' => 'Focused training on proof techniques, logical structure, and clear mathematical presentation.'
     ],
     [
         'title' => 'KUET Campus Math Olympiad Final Round',
         'date' => '2026-03-29',
         'venue' => 'Mechanical Engineering Gallery, KUET',
         'type' => 'Competition',
-        'description' => 'Final contest round for top-performing campus teams.'
+        'description' => 'Final contest round for top-performing campus teams with timed rounds and curated judging.'
     ]
 ];
 
