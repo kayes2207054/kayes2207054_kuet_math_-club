@@ -379,9 +379,18 @@ h3 {
   object-fit: cover;
 }
 
+.hero-photo-main img {
+  object-position: center top;
+}
+
+.hero-photo-sub img {
+  object-position: center;
+}
+
 .hero-photo:hover,
 .gallery-item:hover,
 .event-card:hover,
+.team-card:hover,
 .panel:hover,
 .data-card:hover,
 .voice-card:hover {
@@ -584,8 +593,9 @@ h3 {
 
 .photo-card img {
   width: 100%;
-  height: 240px;
+  height: 250px;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .team-body {
@@ -623,8 +633,9 @@ h3 {
 
 .event-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  object-position: center;
 }
 
 .event-body {
@@ -648,6 +659,7 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery-item figcaption {
