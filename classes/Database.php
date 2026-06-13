@@ -15,10 +15,10 @@ final class Database
             return self::$conn;
         }
 
-        $dbHost = getenv('DB_HOST') ?: '';
-        $dbName = getenv('DB_NAME') ?: '';
-        $dbUser = getenv('DB_USER') ?: '';
-        $dbPass = getenv('DB_PASS') ?: '';
+        $dbHost = app_env('DB_HOST', app_is_local_environment() ? '127.0.0.1' : '');
+        $dbName = app_env('DB_NAME', app_is_local_environment() ? 'kuet_math_club' : '');
+        $dbUser = app_env('DB_USER', app_is_local_environment() ? 'root' : '');
+        $dbPass = app_env('DB_PASS', app_is_local_environment() ? '' : '');
 
         if ($dbHost === '' || $dbName === '' || $dbUser === '') {
             return null;

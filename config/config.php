@@ -3,38 +3,158 @@ declare(strict_types=1);
 
 date_default_timezone_set('Asia/Dhaka');
 
-// Lightweight .env loader for local development without extra dependencies.
-if (file_exists(__DIR__ . '/../.env')) {
-    $envLines = file(__DIR__ . '/../.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($envLines as $envLine) {
-        $trimmed = trim($envLine);
-        if ($trimmed === '' || str_starts_with($trimmed, '#') || !str_contains($trimmed, '=')) {
-            continue;
+if (!function_exists('app_is_local_environment')) {
+    function app_is_local_environment(): bool
+    {
+        $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+
+        if (PHP_SAPI === 'cli') {
+            return true;
         }
 
-        [$name, $value] = explode('=', $trimmed, 2);
-        $name = trim($name);
-        $value = trim($value, " \t\n\r\0\x0B\"'");
+        return $host === 'localhost'
+            || $host === '127.0.0.1'
+            || $host === '::1'
+            || str_ends_with($host, '.local');
+    }
+}
 
-        if ($name !== '' && getenv($name) === false) {
-            putenv($name . '=' . $value);
-            $_ENV[$name] = $value;
+if (!function_exists('app_load_env_file')) {
+    function app_load_env_file(string $path): void
+    {
+        if (!is_file($path) || !is_readable($path)) {
+            return;
+        }
+
+        $envLines = file($path, FILE_IGNORE_NEW_LINES);
+        if ($envLines === false) {
+            return;
+        }
+
+        foreach ($envLines as $envLine) {
+            $trimmed = trim($envLine);
+            if ($trimmed === '' || str_starts_with($trimmed, '#')) {
+                continue;
+            }
+
+            if (str_starts_with($trimmed, 'export ')) {
+                $trimmed = trim(substr($trimmed, 7));
+            }
+
+            if (!str_contains($trimmed, '=')) {
+                continue;
+            }
+
+            [$name, $value] = explode('=', $trimmed, 2);
+            $name = trim($name);
+            $value = trim($value);
+
+            if ($name === '' || preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', $name) !== 1) {
+                continue;
+            }
+
+            if ($value !== '') {
+                $firstChar = $value[0];
+                $lastChar = $value[strlen($value) - 1];
+
+                if (($firstChar === '"' && $lastChar === '"') || ($firstChar === "'" && $lastChar === "'")) {
+                    $value = substr($value, 1, -1);
+                    if ($firstChar === '"') {
+                        $value = str_replace([
+                            '\\n',
+                            '\\r',
+                            '\\t',
+                            '\\"',
+                            '\\\\',
+                        ], [
+                            "\n",
+                            "\r",
+                            "\t",
+                            '"',
+                            '\\',
+                        ], $value);
+                    }
+                } else {
+                    $commentPos = strpos($value, ' #');
+                    if ($commentPos !== false) {
+                        $value = trim(substr($value, 0, $commentPos));
+                    }
+                }
+            }
+
+            if (getenv($name) === false) {
+                putenv($name . '=' . $value);
+                $_ENV[$name] = $value;
+                $_SERVER[$name] = $value;
+            }
         }
     }
 }
+
+if (!function_exists('app_bootstrap_environment')) {
+    function app_bootstrap_environment(): void
+    {
+        $envPaths = [
+            dirname(__DIR__) . '/.env',
+            getcwd() . '/.env',
+            __DIR__ . '/.env',
+        ];
+
+        foreach (array_values(array_unique($envPaths)) as $envPath) {
+            app_load_env_file($envPath);
+        }
+    }
+}
+
+if (!function_exists('app_env')) {
+    function app_env(string $name, ?string $default = null): string
+    {
+        $value = getenv($name);
+
+        if ($value === false || $value === '') {
+            $value = (string) ($_ENV[$name] ?? $_SERVER[$name] ?? '');
+        }
+
+        if ($value === '' && $default !== null) {
+            return $default;
+        }
+
+        return $value;
+    }
+}
+
+if (!function_exists('app_password_matches')) {
+    function app_password_matches(string $input, string $configuredPassword): bool
+    {
+        if ($configuredPassword === '') {
+            return false;
+        }
+
+        if (preg_match('/^\$(2y|2a|2b|argon2id|argon2i)\$/', $configuredPassword) === 1) {
+            return password_verify($input, $configuredPassword);
+        }
+
+        return hash_equals($configuredPassword, $input);
+    }
+}
+
+app_bootstrap_environment();
 
 define('SITE_NAME', 'KUET Math Club');
 define('SITE_EMAIL', 'kuetmathclub@kuet.ac.bd');
 define('SITE_PHONE', '+8801712345678');
 define('SITE_ADDRESS', 'Khulna University of Engineering and Technology, Khulna, Bangladesh');
 
-// Secrets and DB config are loaded from environment variables only.
-$adminPassword = getenv('ADMIN_PASSWORD') ?: '';
-$dbHost = getenv('DB_HOST') ?: '';
-$dbName = getenv('DB_NAME') ?: '';
-$dbUser = getenv('DB_USER') ?: '';
-$dbPass = getenv('DB_PASS') ?: '';
-define('USE_DB', filter_var(getenv('USE_DB') ?: 'false', FILTER_VALIDATE_BOOLEAN));
+// Secrets and DB config are loaded from environment variables with local fallbacks.
+$adminPassword = app_env('ADMIN_PASSWORD', app_is_local_environment() ? 'KUET-local-admin-2026!' : '');
+$dbHost = app_env('DB_HOST', app_is_local_environment() ? '127.0.0.1' : '');
+$dbName = app_env('DB_NAME', app_is_local_environment() ? 'kuet_math_club' : '');
+$dbUser = app_env('DB_USER', app_is_local_environment() ? 'root' : '');
+$dbPass = app_env('DB_PASS', app_is_local_environment() ? '' : '');
+
+if (!defined('USE_DB')) {
+    define('USE_DB', filter_var(app_env('USE_DB', 'false'), FILTER_VALIDATE_BOOLEAN));
+}
 
 $navItems = [
     'home' => 'Home',

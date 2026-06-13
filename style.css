@@ -233,6 +233,73 @@ h3 {
   margin-left: 0;
 }
 
+.admin-page-head {
+  text-align: center;
+  max-width: 860px;
+  margin-bottom: 1.25rem;
+}
+
+.admin-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.max-w {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 1.35rem 1.35rem 1.2rem;
+}
+
+.admin-login-card h3 {
+  margin-bottom: 0.35rem;
+}
+
+.admin-login-card .note {
+  margin: 0 0 0.9rem;
+}
+
+.admin-login-card .btn {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.logout-form {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.notice {
+  width: min(100%, 560px);
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+.notice-success {
+  background: #e9f9ee;
+  color: #17613a;
+  border: 1px solid #bfe8cb;
+}
+
+.notice-error {
+  background: #fff2f2;
+  color: #a43838;
+  border: 1px solid #f1c2c2;
+}
+
+.admin-grid {
+  margin-top: 1rem;
+}
+
 .section-head h2 {
   font-size: clamp(1.65rem, 3.6vw, 2.55rem);
 }

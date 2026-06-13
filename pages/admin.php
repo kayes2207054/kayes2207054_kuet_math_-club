@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+  session_start();
+}
+
 if (!isset($_SESSION['is_admin_logged_in'])) {
     $_SESSION['is_admin_logged_in'] = false;
 }
@@ -9,14 +13,13 @@ $adminError = '';
 $adminSuccess = '';
 
 if (($_POST['admin_action'] ?? '') === 'login') {
-    $password = Utilities::sanitize($_POST['password'] ?? '');
-    if ($adminPassword !== '' && hash_equals($adminPassword, $password)) {
+  $password = trim((string) ($_POST['password'] ?? ''));
+  if (app_password_matches($password, $adminPassword)) {
+    session_regenerate_id(true);
         $_SESSION['is_admin_logged_in'] = true;
         $adminSuccess = 'Admin login successful.';
     } else {
-        $adminError = $adminPassword === ''
-            ? 'Admin password is not configured in environment variables.'
-            : 'Invalid admin password.';
+    $adminError = 'Invalid admin password.';
     }
 }
 
@@ -98,59 +101,63 @@ if ($_SESSION['is_admin_logged_in'] === true) {
 }
 ?>
 
-<section class="section-pad section-soft">
+<section class="section-pad section-soft admin-page">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head compact-head admin-page-head">
       <p class="eyebrow">Bonus admin panel</p>
       <h2>Manage members and events (session storage or MySQL).</h2>
     </div>
 
-    <?php if ($adminSuccess !== ''): ?>
-      <p class="notice notice-success"><?= Utilities::escape($adminSuccess) ?></p>
-    <?php endif; ?>
+    <div class="admin-shell">
+      <?php if ($adminSuccess !== ''): ?>
+        <p class="notice notice-success"><?= Utilities::escape($adminSuccess) ?></p>
+      <?php endif; ?>
 
-    <?php if ($adminError !== ''): ?>
-      <p class="notice notice-error"><?= Utilities::escape($adminError) ?></p>
-    <?php endif; ?>
+      <?php if ($adminError !== ''): ?>
+        <p class="notice notice-error"><?= Utilities::escape($adminError) ?></p>
+      <?php endif; ?>
 
-    <?php if ($_SESSION['is_admin_logged_in'] !== true): ?>
-      <form class="contact-form max-w" method="post" action="index.php?page=admin">
-        <input type="hidden" name="admin_action" value="login">
-        <label>
-          <span>Admin password</span>
-          <input type="password" name="password" required>
-        </label>
-        <button class="btn btn-primary" type="submit">Login</button>
-      </form>
-    <?php else: ?>
-      <form method="post" action="index.php?page=admin" class="logout-form">
-        <input type="hidden" name="admin_action" value="logout">
-        <button class="btn btn-ghost" type="submit">Logout</button>
-      </form>
-
-      <div class="admin-grid">
-        <form class="contact-form" method="post" action="index.php?page=admin">
-          <input type="hidden" name="admin_action" value="add_member">
-          <h3>Add Member</h3>
-          <label><span>Name</span><input name="name" required></label>
-          <label><span>Email</span><input name="email" type="email" required></label>
-          <label><span>Department</span><input name="department" required></label>
-          <label><span>Batch</span><input name="batch" required></label>
-          <label><span>Role</span><input name="role" value="Member" required></label>
-          <button class="btn btn-primary" type="submit">Add Member</button>
+      <?php if ($_SESSION['is_admin_logged_in'] !== true): ?>
+        <form class="contact-form admin-login-card max-w" method="post" action="index.php?page=admin">
+          <input type="hidden" name="admin_action" value="login">
+          <h3>Admin Login</h3>
+          <p class="note">Use the password from your local <strong>.env</strong> file.</p>
+          <label>
+            <span>Admin password</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+          </label>
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+      <?php else: ?>
+        <form method="post" action="index.php?page=admin" class="logout-form">
+          <input type="hidden" name="admin_action" value="logout">
+          <button class="btn btn-ghost" type="submit">Logout</button>
         </form>
 
-        <form class="contact-form" method="post" action="index.php?page=admin">
-          <input type="hidden" name="admin_action" value="add_event">
-          <h3>Add Event</h3>
-          <label><span>Title</span><input name="title" required></label>
-          <label><span>Date</span><input name="date" type="date" required></label>
-          <label><span>Venue</span><input name="venue" required></label>
-          <label><span>Type</span><input name="type" value="General"></label>
-          <label><span>Description</span><textarea name="description" rows="4" required></textarea></label>
-          <button class="btn btn-primary" type="submit">Add Event</button>
-        </form>
-      </div>
-    <?php endif; ?>
+        <div class="admin-grid">
+          <form class="contact-form" method="post" action="index.php?page=admin">
+            <input type="hidden" name="admin_action" value="add_member">
+            <h3>Add Member</h3>
+            <label><span>Name</span><input name="name" required></label>
+            <label><span>Email</span><input name="email" type="email" required></label>
+            <label><span>Department</span><input name="department" required></label>
+            <label><span>Batch</span><input name="batch" required></label>
+            <label><span>Role</span><input name="role" value="Member" required></label>
+            <button class="btn btn-primary" type="submit">Add Member</button>
+          </form>
+
+          <form class="contact-form" method="post" action="index.php?page=admin">
+            <input type="hidden" name="admin_action" value="add_event">
+            <h3>Add Event</h3>
+            <label><span>Title</span><input name="title" required></label>
+            <label><span>Date</span><input name="date" type="date" required></label>
+            <label><span>Venue</span><input name="venue" required></label>
+            <label><span>Type</span><input name="type" value="General"></label>
+            <label><span>Description</span><textarea name="description" rows="4" required></textarea></label>
+            <button class="btn btn-primary" type="submit">Add Event</button>
+          </form>
+        </div>
+      <?php endif; ?>
+    </div>
   </div>
 </section>
